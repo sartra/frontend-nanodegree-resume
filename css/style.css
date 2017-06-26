@@ -24,6 +24,12 @@ h6 {
   padding: 0 5%;
 }
 
+/*#header > span{
+  color:#FDDCA0;
+  font-family: Lato;
+  font-weight: 200;
+}*/
+
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -219,3 +225,5 @@ span {
     display: block;
   }
 }
+
+
