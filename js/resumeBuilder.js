@@ -178,7 +178,8 @@ var education = {
     }, {
         "school": "Google",
         "title": "Certified in Google Analytics",
-        "date": "November 2016"
+        "date": "November 2016",
+        "url": "https://www.Google.com"
     }],
 };
 
@@ -195,11 +196,11 @@ education.display = function() {
 
 
         // $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
-        $("#education").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
+        $(".education-entry").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
     });
 
-    $("#education").append(HTMLschoolStart);
-    $("#education").append(HTMLonlineClasses);
+    // $("#education").append(HTMLschoolStart);
+    $(".education-entry").append(HTMLonlineClasses);
 
     //loop starts below
     education.onlineCourses.forEach(function(s) {

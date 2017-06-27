@@ -46,10 +46,11 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  font-style: bold;
   font-size: 20px;
-  color: #000;
-  line-height: 22px;
+  color: #999;
+  line-height: 29px;
+
 }
 
 h4 {
