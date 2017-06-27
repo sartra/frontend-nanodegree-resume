@@ -188,6 +188,8 @@ education.display = function() {
     //loop starts below
     education.schools.forEach(function(school) {
 
+        $("#education").append(HTMLschoolStart);  // this seems to create too many repeats ?? 
+
         var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
         var formattedschoolDates = HTMLschoolDates.replace("%data%", school.dates);
@@ -195,15 +197,20 @@ education.display = function() {
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", school.majors);
 
 
-        // $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
-        $(".education-entry").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
+        $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
+        // $(".education-entry").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
     });
 
-    // $("#education").append(HTMLschoolStart);
-    $(".education-entry").append(HTMLonlineClasses);
+
+
+
 
     //loop starts below
     education.onlineCourses.forEach(function(s) {
+
+          $("#education").append(HTMLschoolStart);
+          $("#education").append(HTMLonlineClasses);
+
 
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", s.title);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", s.school);
