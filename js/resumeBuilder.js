@@ -71,10 +71,17 @@ var biopic = bio.pic;
 var formattedBiopic = HTMLbioPic.replace("%data%", biopic);
 $("#header").append(formattedBiopic);
 
+$("#header").append(HTMLskillsStart);
 
 // how to insert into ul created by helper HTMLskillsStart ??
 var skills = bio.skills;
-var formattedskills = HTMLskills.replace("%data%", skills);
-$("#header").append(formattedskills);
+
+// var formattedskills = HTMLskills.replace("%data%", skills);
+// $("#header").append(formattedskills);
+
+for (var i=0; i<skills.length; i++){
+  var formattedskills = HTMLskills.replace("%data%", skills[i]);
+  $("#skills").append(formattedskills);
+}
 
 
