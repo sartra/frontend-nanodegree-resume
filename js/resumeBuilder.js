@@ -70,22 +70,22 @@ var education = {
 
 var projects = {
     "projects": [{
-        "title": "HTML5 Canvas Game",
-        "dates": "July 2017",
-        "description": "Created an online game using HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
-        "images": ["https://unsplash.it/300/200"],
-        "url": "http://www.sartradesign.com"
-    }, {
         "title": "Online Portfolio",
         "dates": "October 2014",
         "description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer Nanodegree.",
-        "images": ["https://unsplash.it/300/200"],
+        "images": ["https://placeimg.com/300/200/nature"],
+        "url": "http://www.sartradesign.com"
+    }, {
+        "title": "HTML5 Canvas Game",
+        "dates": "July 2017",
+        "description": "Created an online game using HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
+        "images": ["https://placeimg.com/300/200/arch"],
         "url": "http://www.sartradesign.com"
     }, {
         "title": "Web Development Wiki",
         "dates": "June 2017 - August 2017",
         "description": "Created an online wiki for Udacity's Web Development Course.",
-        "images": ["https://unsplash.it/300/200"],
+        "images": ["https://placeimg.com/300/200/tech"],
         "url": "http://www.sartradesign.com"
     }]
 };
@@ -120,32 +120,31 @@ projects.display();
 
  var name = "S.T.Renshaw";
  var role = "Designer and Front End Developer";
- var skills = ['HTML','CSS', 'JavaScript', 'Responsive Design'];
- var email = "strenshaw@gmail.com";
- var pic = "images/asm.jpg";  // change to me.jpg
- var message = ""; 
+ //var skills = ['HTML','CSS', 'JavaScript', 'Responsive Design'];
 
- var contact = {
-  email: "strenshaw@gmail.com",
-  github: "sartra",
-  location: "New York City"
- };
+ // var contact = {
+ //  email: "strenshaw@gmail.com",
+ //  github: "sartra",
+ //  location: "New York City"
+ // };
  
  var bio = {
     'name': name,
     'role': role,
     'contact': {
-       'email': email,
+       'email': 'strenshaw@gmail.com',
        'github': 'sartra',
        'location': "New York City",
-       'cell': '718.406.5303'
+       'cell': '718.406.5303',
+       'twitter': '@sartra13'
       },
-    'pic': pic,
+    'pic': "images/asm.jpg",  // change to me.jpg
     'message': "Creative Design and Code", 
-    'skills': skills
+    'skills': ['HTML','CSS', 'JavaScript', 'Responsive Design']
  }
 
 
+bio.display = function() {
 
  var formattedName = HTMLheaderName.replace("%data%", name);
 
@@ -154,7 +153,6 @@ projects.display();
 
  $("#header").append(formattedName);
  $("#header").append(formattedRole);
-
 
 var _location = bio.contact.location;
 var formattedLocation = HTMLlocation.replace("%data%", _location);
@@ -174,6 +172,9 @@ var email = bio.contact.email;
 var formattedEmail = HTMLemail.replace("%data%", email);
 $("#topContacts").append(formattedEmail);
 
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+$("#topContacts").append(formattedTwitter);
+
 
 var message = bio.message;
 var welcome_msg = HTMLwelcomeMsg.replace("%data%",message);
@@ -183,18 +184,32 @@ var biopic = bio.pic;
 var formattedBiopic = HTMLbioPic.replace("%data%", biopic);
 $("#header").append(formattedBiopic);
 
+
+
 $("#header").append(HTMLskillsStart);
 
-// how to insert into ul created by helper HTMLskillsStart ??
-var skills = bio.skills;
 
-// var formattedskills = HTMLskills.replace("%data%", skills);
-// $("#header").append(formattedskills);
+//skills loop below
+bio.skills.forEach(function(skill) {
+    
+        var formattedSkills = HTMLskills.replace("%data%", skill);
+        $("#skills").append(formattedSkills);
+});
 
-for (var i=0; i<skills.length; i++){
-  var formattedskills = HTMLskills.replace("%data%", skills[i]);
-  $("#skills").append(formattedskills);
-}
+
+$('#footerContacts').prepend(formattedLocation, formattedEmail, formattedGithub, formattedMobile, formattedTwitter);
+};
+
+bio.display();
+
+// // how to insert into ul created by helper HTMLskillsStart ??
+// var skills = bio.skills;
+
+
+// for (var i=0; i<skills.length; i++){
+//   var formattedskills = HTMLskills.replace("%data%", skills[i]);
+//   $("#skills").append(formattedskills);
+// }
 
 
 
