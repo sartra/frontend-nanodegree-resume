@@ -73,7 +73,7 @@ var projects = {
         "title": "Online Portfolio",
         "dates": "October 2014",
         "description": "Created an online portfolio of work as part of Udacity's Front-End Web Developer Nanodegree.",
-        "images": ["https://placeimg.com/300/200/nature", "img/fry.jpg"],
+        "images": ["https://placeimg.com/300/200/nature", "https://placeimg.com/300/200/people"],
         "url": "http://www.sartradesign.com"
     }, {
         "title": "HTML5 Canvas Game",
@@ -85,7 +85,7 @@ var projects = {
         "title": "Web Development Wiki",
         "dates": "June 2017 - August 2017",
         "description": "Created an online wiki for Udacity's Web Development Course.",
-        "images": ["https://placeimg.com/300/200/tech", "https://placeimg.com/300/200/people"],
+        "images": ["https://placeimg.com/300/200/tech", "https://placeimg.com/300/200/nature"],
         "url": "http://www.sartradesign.com"
     }]
 };
@@ -97,7 +97,7 @@ projects.display = function () {
       $('#projects').append(HTMLprojectStart);
 
        project.images.forEach(function(image) {
-        var formattedProjectImage = HTMLprojectImage.replace('%data%', project.images);
+        var formattedProjectImage = HTMLprojectImage.replace('%data%', image);
         $('.project-entry:last').append(formattedProjectImage);
       });
 
@@ -108,7 +108,6 @@ projects.display = function () {
 
       // attach to the class of div reated in HTMLprojectStart
       $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, '<br>');
-
      
    });
 }
@@ -220,28 +219,6 @@ bio.display();
 
 
 
-// work.display = function() {
-
-//     for (job in work.jobs) {
-//         $("#workExperience").append(HTMLworkStart);
-//         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-//         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-//         var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-//         var formattedEmployerTitle = formattedEmployer + formattedTitle;
-
-//         $(".work-entry:last").append(formattedEmployerTitle, formattedLocation);
-
-//         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-//         $(".work-entry:last").append(formattedDates);
-
-//         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-//         $(".work-entry:last").append(formattedDescription);
-//     }
-// };
-// work.display();
-
-
-
 work.display = function() {
 
     work.jobs.forEach(function(job) {
@@ -343,3 +320,5 @@ function inName(name) {
 }
 
 //$('#main').append(internationaizeButton);
+
+$("#mapDiv").append(googleMap);
