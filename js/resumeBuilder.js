@@ -103,7 +103,9 @@ projects.display = function () {
 
 
       var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title).replace('#', project.url);
+      
       var formattedProjectDates = HTMLprojectDates.replace('%data%', project.dates);
+      
       var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.description);
 
       // attach to the class of div reated in HTMLprojectStart
