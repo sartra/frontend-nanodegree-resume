@@ -24,7 +24,7 @@
         "dates": "August 2010 - June 2017",
         "description": "Freelance designer working with companies and individuals throughout NYC and remotely; Creation of posters, fliers, booklets and various promotional materials; Assistance with websites for artists and creation of digital archives; Digital marketing"
     }]
-}
+};
 
 var education = {
     "schools": [{
@@ -40,14 +40,14 @@ var education = {
         "location": "Providence, Rhode Island",
         "degree": "Master of Fine Arts",
         "majors": ["Digital Media"]
-    }, 
+    },
     {
         "name": "University of Illinois at Urbana Champaign",
         "dates": "2000-2004",
         "location": "Urbana, Illinois",
         "degree": "Bachelor of Fine Arts",
         "majors": ["Fine Art and Design"]
-    }, 
+    },
     {
         "name": "Goldsmiths College, University of London",
         "dates": "2002-2003",
@@ -66,7 +66,7 @@ var education = {
         "date": "November 2016",
         "url": "https://www.Google.com"
     }]
-}
+};
 
 var projects = {
     "projects": [{
@@ -93,7 +93,7 @@ var projects = {
 projects.display = function () {
    //start loop
    projects.projects.forEach(function(project) {
-      
+
       $('#projects').append(HTMLprojectStart);
 
        project.images.forEach(function(image) {
@@ -103,35 +103,23 @@ projects.display = function () {
 
 
       var formattedProjectTitle = HTMLprojectTitle.replace('%data%', project.title).replace('#', project.url);
-      
+
       var formattedProjectDates = HTMLprojectDates.replace('%data%', project.dates);
-      
+
       var formattedProjectDescription = HTMLprojectDescription.replace('%data%', project.description);
 
       // attach to the class of div reated in HTMLprojectStart
       $('.project-entry:last').append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, '<br>');
-     
+
    });
-}
+};
 
 projects.display();
 
 
-// $("#main").append("Sarah T Renshaw");
-
- var name = "S.T.Renshaw";
- var role = "Designer and Front End Developer";
- //var skills = ['HTML','CSS', 'JavaScript', 'Responsive Design'];
-
- // var contact = {
- //  email: "strenshaw@gmail.com",
- //  github: "sartra",
- //  location: "New York City"
- // };
- 
  var bio = {
-    'name': name,
-    'role': role,
+    'name': "S.T.Renshaw",
+    'role': "Designer and Front End Developer",
     'contact': {
        'email': 'strenshaw@gmail.com',
        'github': 'sartra',
@@ -140,14 +128,14 @@ projects.display();
        'twitter': '@sartra13'
       },
     'pic': "images/asm.jpg",  // change to me.jpg
-    'message': "Creative Design and Code", 
+    'message': "Creative Design and Code",
     'skills': ['HTML','CSS', 'JavaScript', 'Responsive Design']
- }
+ };
 
 
 bio.display = function() {
 
- var formattedName = HTMLheaderName.replace("%data%", name);
+ var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
  var formattedRole = HTMLheaderRole.replace("%data%", role);
 
@@ -194,8 +182,8 @@ if(bio.skills) {
   var formattedSkills = HTMLskills.replace("%data%", bio.skills.join(' / '));
         $("#skills").append(formattedSkills);
 
-   // loop to print each one on a line:      
-  // bio.skills.forEach(function(skill) {   
+   // loop to print each one on a line:
+  // bio.skills.forEach(function(skill) {
   //       var formattedSkills = HTMLskills.replace("%data%", skill);
   //       $("#skills").append(formattedSkills);
   // });
@@ -208,9 +196,6 @@ $('#footerContacts').prepend(formattedLocation, formattedEmail, formattedGithub,
 
 
 bio.display();
-
-// // how to insert into ul created by helper HTMLskillsStart ??
-// var skills = bio.skills;
 
 
 // for (var i=0; i<skills.length; i++){
@@ -250,7 +235,7 @@ education.display = function() {
     //loop starts below
     education.schools.forEach(function(school) {
 
-        $("#education").append(HTMLschoolStart);  // this seems to create too many repeats ?? 
+        $("#education").append(HTMLschoolStart);  // this seems to create too many repeats ??
 
         var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", school.degree);
@@ -261,8 +246,7 @@ education.display = function() {
         var formattedSchoolName_Degree = formattedSchoolName + formattedSchoolDegree;
 
        $(".education-entry:last").append(formattedSchoolName_Degree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
-        
-        // $(".education-entry").append(formattedSchoolName, formattedSchoolDegree, formattedschoolDates, formattedSchoolMajor, formattedSchoolLocation);
+
     });
 
 
@@ -273,19 +257,16 @@ education.display = function() {
     education.onlineCourses.forEach(function(s) {
 
           $("#education").append(HTMLschoolStart);
-          
+
 
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", s.title);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", s.school);
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", s.date);
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", s.url).replace("#", s.url);
 
-
         var formattedOnlineTitle_School = formattedOnlineTitle +formattedOnlineSchool;
 
         $(".education-entry:last").append(formattedOnlineTitle_School, formattedOnlineDates, formattedOnlineURL);
-
-        // $(".education-entry:last").append(formattedOnlineSchool, formattedOnlineTitle, formattedOnlineDates, formattedOnlineURL);
 
     });
 };
@@ -306,7 +287,7 @@ function locationizer(work_obj) {
         locations.push(job.location);
     });
     console.log(locations);
-    return locations; 
+    return locations;
 }
 
 locationizer(work);
