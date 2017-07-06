@@ -124,11 +124,11 @@ projects.display();
        'email': 'strenshaw@gmail.com',
        'github': 'sartra',
        'location': "New York City",
-       'cell': '718.406.5303',
+       'mobile': '718.406.5303',
        'twitter': '@sartra13'
       },
-    'pic': "images/asm.jpg",  // change to me.jpg
-    'message': "Creative Design and Code",
+    'biopic': "images/asm.jpg",  // change to me.jpg
+    'welcomeMessage': "Creative Design and Code",
     'skills': ['HTML','CSS', 'JavaScript', 'Responsive Design']
  };
 
@@ -137,7 +137,7 @@ bio.display = function() {
 
  var formattedName = HTMLheaderName.replace("%data%", bio.name);
 
- var formattedRole = HTMLheaderRole.replace("%data%", role);
+ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
 
  $("#header").append(formattedName);
@@ -148,7 +148,7 @@ var formattedLocation = HTMLlocation.replace("%data%", _location);
 $("#topContacts").append(formattedLocation);
 
 
-var mobile = bio.contact.cell;
+var mobile = bio.contact.mobile;
 var formattedMobile = HTMLmobile.replace("%data%", mobile);
 $("#topContacts").append(formattedMobile);
 
@@ -165,11 +165,11 @@ var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
 $("#topContacts").append(formattedTwitter);
 
 
-var message = bio.message;
+var message = bio.welcomeMessage;
 var welcome_msg = HTMLwelcomeMsg.replace("%data%",message);
 $("#header").append(welcome_msg);
 
-var biopic = bio.pic;
+var biopic = bio.biopic;
 var formattedBiopic = HTMLbioPic.replace("%data%", biopic);
 $("#header").append(formattedBiopic);
 
