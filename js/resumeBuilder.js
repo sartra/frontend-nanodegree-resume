@@ -58,12 +58,12 @@ var education = {
     "onlineCourses": [{
         "school": "Udacity",
         "title": "Front-End Web Development Nanodegree",
-        "date": "May 2017",
+        "dates": "May 2017",
         "url": "https://www.udacity.com"
     }, {
         "school": "Google",
         "title": "Certified in Google Analytics",
-        "date": "November 2016",
+        "dates": "November 2016",
         "url": "https://www.Google.com"
     }]
 };
@@ -120,7 +120,7 @@ projects.display();
  var bio = {
     'name': "S.T.Renshaw",
     'role': "Designer and Front End Developer",
-    'contact': {
+    'contacts': {
        'email': 'strenshaw@gmail.com',
        'github': 'sartra',
        'location': "New York City",
@@ -143,25 +143,25 @@ bio.display = function() {
  $("#header").append(formattedName);
  $("#header").append(formattedRole);
 
-var _location = bio.contact.location;
-var formattedLocation = HTMLlocation.replace("%data%", _location);
+var location = bio.contacts.location;
+var formattedLocation = HTMLlocation.replace("%data%", location);
 $("#topContacts").append(formattedLocation);
 
 
-var mobile = bio.contact.mobile;
+var mobile = bio.contacts.mobile;
 var formattedMobile = HTMLmobile.replace("%data%", mobile);
 $("#topContacts").append(formattedMobile);
 
 
-var github = bio.contact.github;
+var github = bio.contacts.github;
 var formattedGithub = HTMLgithub.replace("%data%", github);
 $("#topContacts").append(formattedGithub);
 
-var email = bio.contact.email;
+var email = bio.contacts.email;
 var formattedEmail = HTMLemail.replace("%data%", email);
 $("#topContacts").append(formattedEmail);
 
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 $("#topContacts").append(formattedTwitter);
 
 
@@ -261,7 +261,7 @@ education.display = function() {
 
         var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", s.title);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", s.school);
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", s.date);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", s.dates);
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", s.url).replace("#", s.url);
 
         var formattedOnlineTitle_School = formattedOnlineTitle +formattedOnlineSchool;
