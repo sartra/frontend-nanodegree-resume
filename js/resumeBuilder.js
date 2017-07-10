@@ -119,7 +119,7 @@ projects.display();
 
  var bio = {
     'name': "S.T.Renshaw",
-    'role': "Designer and Front End Developer",
+    'role': "Designer & Front End Developer",
     'contacts': {
        'email': 'strenshaw@gmail.com',
        'github': 'sartra',
@@ -127,7 +127,7 @@ projects.display();
        'mobile': '718.406.5303',
        'twitter': '@sartra13'
       },
-    'biopic': "images/asm.jpg",  // change to me.jpg
+    'biopic': "images/sartra-square.jpg",  // change to me.jpg
     'welcomeMessage': "Creative Design and Code",
     'skills': ['HTML','CSS', 'JavaScript', 'Responsive Design']
  };

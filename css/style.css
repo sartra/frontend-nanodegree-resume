@@ -11,7 +11,7 @@ h5,
 h6 {
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Lato", "Roboto", sans-serif;
 }
 
 .clear-fix {
@@ -31,10 +31,14 @@ h6 {
 }*/
 
 h1 {
-    font-size: 40px;
-    color: #f5a623;
+    font-size: 70px;
+    font-weight: 300;
+/*    color: #f5a623;
+*/
+    color: #99a30f;
     line-height: 48px;
     display: inline;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -103,7 +107,8 @@ a {
 }
 
 #skills-h3 {
-    color: #f5ae23;
+    /*color: #f5ae23;*/
+    color: #99a30f;
     display: none;
 }
 
@@ -113,6 +118,14 @@ a {
 
 .orange-text {
     color: #f5ae23;
+}
+
+.green {
+    background-color: #99a30f;
+}
+
+.green-text {
+    color: #99a30f;
 }
 
 .white-text {
@@ -133,6 +146,7 @@ a {
 /* TODO: Replace with image later */
 #header {
     background-color: #484848;
+    background-color: rgb(203, 203, 203);
 }
 
 .flex-box {
@@ -164,6 +178,7 @@ ul {
     padding: 10px;
     width: 200px;
     display: none;
+    border-radius: 50%;
 }
 
 img {
@@ -172,6 +187,13 @@ img {
 
 span {
     padding: 5px;
+}
+
+#byline {
+    /*color: rgb(154, 1, 114);*/
+    color: rgb(121, 121, 121);
+    font-size: 22px;
+    font-weight: 100;
 }
 
 #lets-connect {
@@ -230,7 +252,19 @@ span {
 }
 
 @media (max-width: 600px) {
+
     #topContacts {
         display: none;
+    }
+
+    h1 {
+        font-size: 3em;
+        display: block;
+    }
+
+    #byline {
+        display: block;
     };
 }
+
+
